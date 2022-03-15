@@ -1,0 +1,22 @@
+
+service: testParamStore
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  profile: personal
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+    environment:
+      SSM_PARAM: ${ssm:/dev/dummy-param10}
+          
