@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "terraform": "cd infra && terraform init -reconfigure && terraform apply -auto-approve -input=false && cd ..",
-    "package": "serverless package --package test",
-    "deploy": "serverless deploy --package test"
+    "package": "serverless package --package serverlessPackage",
+    "deploy": "serverless deploy --package serverlessPackage"
   },
   "devDependencies": {
     "serverless": "2.23.0"
